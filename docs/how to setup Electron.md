@@ -14,7 +14,7 @@
 
 ## 作業環境作成
  - 作業用フォルダを作成しコマンドプロンプトでそこまで移動しておく  
- - ソース保管場所としてsrcフォルダ、実行ファイル保存場所としてdistフォルダを作成する。  
+ - srcフォルダ(TypeScript置き場)、publicフォルダ(htmlやcssファイル置き場)、dist（ビルドファイル置き場）フォルダを作成する。  
  - npmの適用 (規定値で作るために-yオプションを指定する)  
    ```
    npm init -y
@@ -53,6 +53,24 @@
  - ひな形を作ってくれないので自分でファイルを作る「webpack.config.js」  
 
 ## コーディング
- - index.html  
- - main.ts  
- - index.tsx
+ - public/index.html  
+ - src/main.ts  
+ - src/index.tsx
+
+## コンパイル
+ - tsconfig.json の設定に従って TypeScript から JavaScript への変換が行われ、dist/main.js と dist/main.js.map が生成されます。
+```
+# メインプロセスのコンパイル
+$ npx tsc
+``` 
+
+```
+
+# レンダープロセスのコンパイル
+$ npx webpack
+``` 
+
+ - electron実行してみる
+ ```
+ npx electron ./dist/main.js
+ ```
