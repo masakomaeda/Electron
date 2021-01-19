@@ -59,18 +59,26 @@
 
 ## コンパイル
  - tsconfig.json の設定に従って TypeScript から JavaScript への変換が行われ、dist/main.js と dist/main.js.map が生成されます。
-```
-# メインプロセスのコンパイル
-$ npx tsc
-``` 
-
-```
-
-# レンダープロセスのコンパイル
-$ npx webpack
-``` 
+  ```
+  # メインプロセスのコンパイル
+  $ npx tsc
+  ``` 
+ - バンドルファイルが生成される
+  ```
+  # レンダープロセスのコンパイル
+  $ npx webpack
+  ``` 
 
  - electron実行してみる
- ```
- npx electron ./dist/main.js
- ```
+  ```
+  npx electron ./dist/main.js
+  ```
+
+## コンパイル（npm scriptsで）
+```
+ "scripts": {
+    "start": "electron ./dist/main.js",
+    "build:main": "tsc",
+    "build:render": "webpack"
+  }
+```
