@@ -1,0 +1,10 @@
+CREATE TABLE TBL_MEMBER (
+ID	        smallserial not null,
+FIRST_NAME	varchar(20) not null,
+LAST_NAME	  varchar(20),
+KANA_NAME  	varchar(20),
+CREATE_DATE date not null,
+UPDATE_DATE date not null,
+UPDATE_USER	varchar(20) not null,
+PRIMARY KEY (ID)
+);
